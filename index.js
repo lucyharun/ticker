@@ -13,6 +13,11 @@ function getPrices() {
 			let currentPrice = res.data[0].current_price || 0 // Default to zero
 			let priceChange = res.data[0].price_change_percentage_24h || 0 // Default to zero
 			let symbol = res.data[0].symbol || '?' 
+			
+client.on("ready", () => {
+  // Playing in my support server
+  client.user.setActivity("in my support server", { type: "PLAYING" });
+
 			client.user.setPresence({
 				game: {
 					// Example: "Watching -5,52% | BTC"
