@@ -35,9 +35,8 @@ function getPrices() {
 client.on('ready', () => {
 	console.log('Logged in as', client.user.tag)
 
-	getPrices() // Ping server once on startup
+	getPrices() // Ping server
 	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
-	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1)  * 60 * 1000)
 })
 
 // Login to Discord
