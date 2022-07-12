@@ -21,7 +21,7 @@ function getPrices() {
 				}
 			})
 
-			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${process.env.CURRENCY_SYMBOL}${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}`)
+			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}${process.env.CURRENCY_SYMBOL}`)
 
 			console.log('Updated price to', currentPrice)
 		}
@@ -35,7 +35,9 @@ function getPrices() {
 client.on('ready', () => {
 	console.log('Logged in as', client.user.tag)
 
-	getPrices() // Ping server
+	getPrices() // Ping server once on startup
+	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
+	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1) * 60 * 1000)
 })
 
 // Login to Discord
