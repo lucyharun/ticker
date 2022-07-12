@@ -37,7 +37,7 @@ client.on('ready', () => {
 
 	getPrices() // Ping server once on startup
 	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
-	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1)
+	setInterval(getPrices, Math.max(1, process.env.MC_PING_FREQUENCY || 1)  * 60 * 1000)
 })
 
 // Login to Discord
