@@ -10,7 +10,7 @@ function getPrices() {
 	axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${process.env.PREFERRED_CURRENCY}&ids=${process.env.COIN_ID}`).then(res => {
 		// If we got a valid response
 		if(res.data && res.data[0].current_price && res.data[0].price_change_percentage_24h) {
-			let currentPrice = res.data[0].current_price
+			let currentPrice = res.data[].current_price
 			let priceChange = res.data[0].price_change_percentage_24h || 0 // Default to zero
 			let symbol = res.data[0].symbol || '?' 
 			client.user.setPresence({
