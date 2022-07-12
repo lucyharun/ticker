@@ -31,6 +31,26 @@
       "description": "How often should the price be refreshed in seconds.",
       "value": "1"
     }
+    "CONTRACT": {
+      "description": "Contract of the token/asset: e.g. 0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+    },
+    "NAME": {
+      "description": "Name of the token/asset which will be shown before the price.",
+      "value": "USDT"
+    },
+    "CHAIN": {
+      "description": "Chain of the token. probably ethereum",
+      "value": "ethereum"
+    },
+    "CURRENCY":{
+      "description": "Currency",
+      "value": "usd"
+    },
+    "REFRESH_TIMER":{
+      "description": "How often should the price be refreshed in seconds.",
+      "value": "60"
+    }
 
   }
 
