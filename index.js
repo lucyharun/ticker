@@ -21,7 +21,7 @@ function getPrices() {
 				}
 			})
 
-			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${(process.env.CURRENCY_SYMBOL)}$(currentPrice).replace}`)
+			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`{(process.env.CURRENCY_SYMBOL)}$(currentPrice).replace}`)
 
 			console.log('Updated price to', currentPrice)
 		}
