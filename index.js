@@ -11,7 +11,7 @@ function getPrices() {
 		// If we got a valid response
 		if(res.data && res.data[0].current_price && res.data[0].price_change_percentage_24h) {
 			let currentPrice = res.data[0].current_price |
-			let priceChange = res.data[0].price_change_percentage_24h || 0 // Default to zero
+			let priceChange = res.data[0].price_change_percentage_24h |
 			let symbol = res.data[0].symbol || '?' 
 			client.user.setPresence({
 				game: {
@@ -36,7 +36,6 @@ client.on('ready', () => {
 	console.log('Logged in as', client.user.tag)
 
 	getPrices() // Ping server
-	// Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
 })
 
 // Login to Discord
