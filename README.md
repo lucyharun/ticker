@@ -23,3 +23,8 @@ For information on getting a bot token, follow the steps on [the Discord develop
 This was created for my Discord server, but I wanted to share it with added flexibility for anyone to use.
 
 This relies on the API hosted at https://api.coingecko.com
+
+
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/lucyharun/ticker)
+
