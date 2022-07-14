@@ -10,7 +10,7 @@ function getPrices() {
 	axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${process.env.PREFERRED_CURRENCY}&ids=${process.env.COIN_ID}`).then(res => {
 		// If we got a valid response
 		if(res.data && res.data[0].current_price && res.data[0].price_change_percentage_24h) {
-			let currentPrice = res.data[0].current_price
+			let currentPrice = res.data[0].current_price |
 			let priceChange = res.data[0].price_change_percentage_24h || 0 // Default to zero
 			let symbol = res.data[0].symbol || '?' 
 			
@@ -22,7 +22,7 @@ function getPrices() {
 				}
 			})
 
-			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}${process.env.CURRENCY_SYMBOL}`)
+			client.guilds.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${process.env.CURRENCY_SYMBOL}${(currentPrice).toLocaleString().replace(/,/g,process.env.THOUSAND_SEPARATOR)}`)
 
 			console.log('Updated price to', currentPrice)
 		}
