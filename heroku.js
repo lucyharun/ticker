@@ -1,6 +1,6 @@
 require('dotenv').config() // Load .env file
-import express from "express";
-import fetch from "node-fetch";
+const express = require("express");
+const fetch = require("node-fetch");
 
 const wakeUpDyno = (url, interval = 25, callback) => {
 	const milliseconds = interval * 60000;
@@ -36,7 +36,7 @@ console.log("Heroku dyno URL: " + HEROKU_DYNO_URL);
 
 const app = express();
 
-export function enable_heroku() {
+module.exports = function enable_heroku() {
 	app.get("/", function (req, res) {
 		res.send("Hello world! you have reached the secret inner workings of the FILC BOT");
 	});
