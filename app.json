@@ -28,8 +28,12 @@
       "value": "900293980284149780"
     },
     "UPDATE_FREQUENCY": {
-      "description": "How often should the price be refreshed in seconds.",
+      "description": "How often should the price be refreshed",
       "value": "1"
+    },
+    "HEROKU_DYNO_URL": {
+      "description": ".",
+      "value": "."
     }
 
   }
